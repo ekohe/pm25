@@ -1,5 +1,8 @@
 # PM25
 
+[![Build Status](https://www.travis-ci.org/ekohe/pm25.png?branch=master)](https://www.travis-ci.org/ekohe/pm25)
+[![Code Climate](https://codeclimate.com/github/ekohe/pm25.png)](https://codeclimate.com/github/ekohe/pm25)
+
 PM2.5 and ozone readings Data From U.S. Consulate.
 
 Include below cities of China:
@@ -31,13 +34,13 @@ Or install it yourself as:
 PM25::Beijing.get 
 # => return an array include current and history data:
 # [{"title"=>"06/04/2013 6:00:00 PM",
-#   "link"=>"http://www.stateair.net/web/post/1/4.html",
+#   "link"=>"http://www.stateair.net/web/post/1/1.html",
 #   "description"=>
-#    "06-04-2013 18:00; PM2.5; 37.0; 105; Unhealthy for Sensitive Groups (at 24-hour exposure at this level)",
+#    "06-04-2013 18:00; PM2.5; 71.0; 159; Unhealthy (at 24-hour exposure at this level)",
 #   "Param"=>"PM2.5",
-#   "Conc"=>"37.0",
-#   "AQI"=>"105",
-#   "Desc"=>"Unhealthy for Sensitive Groups (at 24-hour exposure at this level)",
+#   "Conc"=>"71.0",
+#   "AQI"=>"159",
+#   "Desc"=>"Unhealthy (at 24-hour exposure at this level)",
 #   "ReadingDateTime"=>"06/04/2013 6:00:00 PM"},
 #  {"title"=>"06/04/2013 5:00:00 PM",
 # ......
