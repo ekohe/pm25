@@ -51,7 +51,6 @@ PM25::Beijing.latest
 #  "AQI"=>212,
 #  "Desc"=>"Very Unhealthy (at 24-hour exposure at this level)",
 #  "ReadingDateTime"=>Sat, 06 Jul 2013 17:00:00 +0000}
-#  "ReadingDateTime"=>"06/07/2013 5:00:00 PM"}
 #
 # column types:
 #   - 'Conc': float
@@ -73,6 +72,7 @@ PM25::Guangzhou.latest
 
 # Shenyang
 PM25::Shenyang.get
+PM25::Shenyang.latest
 ```
 
 ## Contributing
