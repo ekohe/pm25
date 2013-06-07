@@ -31,7 +31,7 @@ Or install it yourself as:
 
 ```ruby
 # Beijing
-PM25::Beijing.get 
+PM25::Beijing.get
 # => return an array include current and history data:
 # [{"title"=>"06/04/2013 6:00:00 PM",
 #   "link"=>"http://www.stateair.net/web/post/1/1.html",
@@ -45,14 +45,31 @@ PM25::Beijing.get
 #  {"title"=>"06/04/2013 5:00:00 PM",
 # ......
 
+PM25::Beijing.latest
+# => return a hash with the latest data, all value was parsed:
+# {"Conc"=>162.0,
+#  "AQI"=>212,
+#  "Desc"=>"Very Unhealthy (at 24-hour exposure at this level)",
+#  "ReadingDateTime"=>Sat, 06 Jul 2013 17:00:00 +0000}
+#  "ReadingDateTime"=>"06/07/2013 5:00:00 PM"}
+#
+# column types:
+#   - 'Conc': float
+#   - 'AQI': integer
+#   - 'Desc': string
+#   - 'ReadingDateTime': datetime
+
 # Shanghai
 PM25::Shanghai.get
+PM25::Shanghai.latest
 
 # Chengdu
 PM25::Chengdu.get
+PM25::Chengdu.latest
 
 # Guangzhou
 PM25::Guangzhou.get
+PM25::Guangzhou.latest
 
 # Shenyang
 PM25::Shenyang.get
