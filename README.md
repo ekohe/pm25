@@ -45,12 +45,21 @@ PM25::Beijing.get
 #  {"title"=>"06/04/2013 5:00:00 PM",
 # ......
 
-PM25::Beijing.latest
-# => return a hash with the latest data, all value was parsed:
-# {"Conc"=>162.0,
-#  "AQI"=>212,
-#  "Desc"=>"Very Unhealthy (at 24-hour exposure at this level)",
-#  "ReadingDateTime"=>Sat, 06 Jul 2013 17:00:00 +0000}
+PM25::Beijing.all
+# => return an array with all data, all value been parsed:
+# [{"Conc"=>125.0,
+#   "AQI"=>187,
+#   "Desc"=>"Unhealthy (at 24-hour exposure at this level)",
+#   "ReadingDateTime"=>Thu, 13 Jun 2013 12:00:00 +0000},
+#  {"Conc"=>121.0,
+#   "AQI"=>185,
+#   "Desc"=>"Unhealthy (at 24-hour exposure at this level)",
+#   "ReadingDateTime"=>Thu, 13 Jun 2013 11:00:00 +0000},
+#  {"Conc"=>110.0,
+#   "AQI"=>179,
+#   "Desc"=>"Unhealthy (at 24-hour exposure at this level)",
+#   "ReadingDateTime"=>Thu, 13 Jun 2013 10:00:00 +0000},
+#  ......
 #
 # column types:
 #   - 'Conc': float
@@ -58,21 +67,33 @@ PM25::Beijing.latest
 #   - 'Desc': string
 #   - 'ReadingDateTime': datetime
 
+PM25::Beijing.last
+# => return a hash with the latest data, all value been parsed:
+# {"Conc"=>125.0,
+#  "AQI"=>187,
+#  "Desc"=>"Unhealthy (at 24-hour exposure at this level)",
+#  "ReadingDateTime"=>Thu, 13 Jun 2013 12:00:00 +0000}
+
+
 # Shanghai
 PM25::Shanghai.get
-PM25::Shanghai.latest
+PM25::Shanghai.all
+PM25::Shanghai.last
 
 # Chengdu
 PM25::Chengdu.get
-PM25::Chengdu.latest
+PM25::Chengdu.all
+PM25::Chengdu.last
 
 # Guangzhou
 PM25::Guangzhou.get
-PM25::Guangzhou.latest
+PM25::Guangzhou.all
+PM25::Guangzhou.last
 
 # Shenyang
 PM25::Shenyang.get
-PM25::Shenyang.latest
+PM25::Shenyang.all
+PM25::Shenyang.last
 ```
 
 ## Contributing

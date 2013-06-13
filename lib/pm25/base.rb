@@ -12,8 +12,12 @@ module PM25
       Hash.from_xml(HTTParty.get(url).body)['rss']['channel']['item']
     end
 
-    def self.latest
-      parse(get.find{|x| x.key? 'AQI'}.slice(*ATTRS))
+    def self.all
+      get.select{|x| x.key? 'AQI'}.map(&method(:slice)).map(&method(:parse))
+    end
+
+    def self.last
+      parse slice(get.find{|x| x.key? 'AQI'})
     end
 
     def self.uri
@@ -26,10 +30,14 @@ module PM25
       uri.to_s
     end
 
+    def self.slice(data)
+      data.slice(*ATTRS)
+    end
+
     def self.parse(data)
       data['Conc'] = data['Conc'].to_f
       data['AQI'] = data['AQI'].to_i
-      data['ReadingDateTime'] = DateTime.parse(data['ReadingDateTime'])
+      data['ReadingDateTime'] = DateTime.strptime(data['ReadingDateTime'], '%m/%d/%Y %I:%M:%S %p')
       data
     end
   end
