@@ -1,5 +1,6 @@
 # PM25
 
+[![Gem Version](https://badge.fury.io/rb/pm25.png)](http://badge.fury.io/rb/pm25)
 [![Build Status](https://www.travis-ci.org/ekohe/pm25.png?branch=master)](https://www.travis-ci.org/ekohe/pm25)
 [![Code Climate](https://codeclimate.com/github/ekohe/pm25.png)](https://codeclimate.com/github/ekohe/pm25)
 
