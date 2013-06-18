@@ -4,15 +4,15 @@
 [![Build Status](https://www.travis-ci.org/ekohe/pm25.png?branch=master)](https://www.travis-ci.org/ekohe/pm25)
 [![Code Climate](https://codeclimate.com/github/ekohe/pm25.png)](https://codeclimate.com/github/ekohe/pm25)
 
-PM2.5 and ozone readings Data From U.S. Consulate.
-
-Include below cities of China:
+China PM2.5 and ozone readings Data From U.S. Consulate. Include below cities of China:
 
 - Beijing
 - Shanghai
 - Chengdu
 - Guangzhou
 - Shenyang
+
+Another gem about Air Quality Index of China available here [ChinaAqi][china_aqi], all monitoring stations in most cities of China are available, most AQI data are available, all the data is form China's official sector. Check it out!
 
 ## Installation
 
@@ -104,3 +104,5 @@ PM25::Shenyang.last
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+[china_aqi]: https://github.com/Xuhao/china_aqi
