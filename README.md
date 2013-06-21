@@ -3,6 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/pm25.png)](http://badge.fury.io/rb/pm25)
 [![Build Status](https://www.travis-ci.org/ekohe/pm25.png?branch=master)](https://www.travis-ci.org/ekohe/pm25)
 [![Code Climate](https://codeclimate.com/github/ekohe/pm25.png)](https://codeclimate.com/github/ekohe/pm25)
+[![Dependency Status](https://gemnasium.com/ekohe/pm25.png)](https://gemnasium.com/ekohe/pm25)
 [![Coverage Status](https://coveralls.io/repos/ekohe/pm25/badge.png)](https://coveralls.io/r/ekohe/pm25)
 
 China PM2.5 and ozone readings Data From U.S. Consulate. Include below cities of China:
