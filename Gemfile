@@ -4,3 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'rake', group: :test
+gem 'coveralls', require: false
