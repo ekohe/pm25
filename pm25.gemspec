@@ -5,7 +5,7 @@ require 'pm25/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "pm25"
-  spec.version       = Pm25::VERSION
+  spec.version       = PM25::VERSION
   spec.authors       = ["Xuhao"]
   spec.email         = ["xuhao@rubyfans.com"]
   spec.description   = %q{PM2.5 reporting from U.S. Consulate}

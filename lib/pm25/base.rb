@@ -1,6 +1,7 @@
 require 'httparty'
 require 'active_support/core_ext/class/attribute'
 require 'active_support/core_ext/hash/conversions'
+require 'active_support/core_ext/hash/slice'
 module PM25
   class Base
     include HTTParty
@@ -35,10 +36,12 @@ module PM25
     end
 
     def self.parse(data)
-      data['Conc'] = data['Conc'].to_f
-      data['AQI'] = data['AQI'].to_i
-      data['ReadingDateTime'] = DateTime.strptime(data['ReadingDateTime'], '%m/%d/%Y %I:%M:%S %p')
-      data
+      parsed_data = {}
+      parsed_data['Conc'] = data['Conc'].to_f
+      parsed_data['AQI'] = data['AQI'].to_i
+      parsed_data['Desc'] = data['Desc'].to_s
+      parsed_data['ReadingDateTime'] = DateTime.strptime(data['ReadingDateTime'], '%m/%d/%Y %I:%M:%S %p')
+      parsed_data
     end
   end
 end
