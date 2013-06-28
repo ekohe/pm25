@@ -34,6 +34,21 @@ describe PM25::Base  do
       hash_b['ReadingDateTime'].should be_a(DateTime)
       hash_b['ReadingDateTime'].should eq(DateTime.strptime(hash_a['ReadingDateTime'], '%m/%d/%Y %I:%M:%S %p'))
     end
+
+    it 'should slice and parse a hash when call `clean_up` method' do
+      hash_b = _class.clean_up(hash_a)
+      hash_b.should be_a(Hash)
+      _class::ATTRS.all?{|x| hash_b.key?(x)}.should eq(true)
+      hash_b.key?('a').should eq(false)
+      hash_b.key?('b').should eq(false)
+
+      hash_b['Conc'].should be_a(Float)
+      hash_b['Conc'].should eq(125.0)
+      hash_b['AQI'].should be_a(Integer)
+      hash_b['AQI'].should eq(187)
+      hash_b['ReadingDateTime'].should be_a(DateTime)
+      hash_b['ReadingDateTime'].should eq(DateTime.strptime(hash_a['ReadingDateTime'], '%m/%d/%Y %I:%M:%S %p'))
+    end
   end
 
   context 'Class attributes and constant' do

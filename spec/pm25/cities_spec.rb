@@ -29,13 +29,22 @@ shared_examples "city common examples" do |city_class, city_id|
     end
 
     it 'should return the latest parsed data clice by ATTRS from remote when call `last` method' do
+      city_class.stub(:get) {
+         [{"title"=>"06/28/2013 11:00:00 AM", "description"=>"06-28-2013 11:00; PM2.5; 6.0; 25; Good (at 24-hour exposure at this level)", "Param"=>"PM2.5", "Conc"=>"6.0", "Desc"=>"Good (at 24-hour exposure at this level)", "ReadingDateTime"=>"06/28/2013 11:00:00 AM"},
+          {"title"=>"06/28/2013 10:00:00 AM", "description"=>"06-28-2013 10:00; PM2.5; 12.0; 50; Good (at 24-hour exposure at this level)", "Param"=>"PM2.5", "Conc"=>"12.0", "AQI"=>"50", "Desc"=>"Good (at 24-hour exposure at this level)", "ReadingDateTime"=>"06/28/2013 10:00:00 AM"}
+        ]
+      }
       data = city_class.last
       data.should be_a(Hash)
       data.keys.should eq(city_class::ATTRS)
       data['Conc'].should be_a(Float)
+      data['Conc'].should eq(12.0)
       data['AQI'].should be_a(Integer)
+      data['AQI'].should eq(50)
       data['Desc'].should be_a(String)
+      data['Desc'].should eq('Good (at 24-hour exposure at this level)')
       data['ReadingDateTime'].should be_a(DateTime)
+      data['ReadingDateTime'].should eq(DateTime.strptime('06/28/2013 10:00:00 AM', '%m/%d/%Y %I:%M:%S %p'))
     end
 
     it 'should return URI::HTTP object own context when call `uri` method' do

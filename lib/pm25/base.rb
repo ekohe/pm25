@@ -14,11 +14,11 @@ module PM25
     end
 
     def self.all
-      get.select{|x| x.key? 'AQI'}.map(&method(:slice)).map(&method(:parse))
+      get.select{|x| x.key? 'AQI'}.map(&method(:clean_up))
     end
 
     def self.last
-      parse slice(get.find{|x| x.key? 'AQI'})
+      clean_up(get.find{|x| x.key? 'AQI'})
     end
 
     def self.uri
@@ -42,6 +42,10 @@ module PM25
       parsed_data['Desc'] = data['Desc'].to_s
       parsed_data['ReadingDateTime'] = DateTime.strptime(data['ReadingDateTime'], '%m/%d/%Y %I:%M:%S %p')
       parsed_data
+    end
+
+    def self.clean_up(data)
+      parse slice(data)
     end
   end
 end
