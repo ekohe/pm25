@@ -70,7 +70,7 @@ PM25::Beijing.all
 #   - 'Desc': string
 #   - 'ReadingDateTime': datetime
 
-PM25::Beijing.last
+PM25::Beijing.last # or PM25::Beijing.latest
 # => return a hash with the latest data, all value been parsed:
 # {"Conc"=>125.0,
 #  "AQI"=>187,

@@ -20,6 +20,9 @@ module PM25
     def self.last
       clean_up(get.find{|x| x.key? 'AQI'})
     end
+    class << self
+      alias_method :latest, :last
+    end
 
     def self.uri
       raise NotImplementedError, "Please set value for 'city_id' class attributes in '#{self.name}' class." unless self.city_id
